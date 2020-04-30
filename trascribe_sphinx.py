@@ -1,7 +1,6 @@
 #!/usr/bin/env python3
 
 import speech_recognition as sr
-import json
 
 # obtain path to "english.wav" in the same folder as this script
 from os import path
