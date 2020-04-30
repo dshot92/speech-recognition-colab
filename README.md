@@ -15,6 +15,10 @@ Based on
 https://github.com/Uberi/speech_recognition
 ```
 
+------
+
+
+
 ### Install
 
 ```
@@ -33,13 +37,17 @@ pip3 install pocketsphinx
 
 Copy mp3 files into main folder and change src and dst strings in the script files. 
 
-To run:
+##### Scripts
 
 ```
 python3 trascribe_google.py 	# Google Cloud - connection required
 
 python3 trascribe_sphinx.py  	# Pocket Sphinx - Offline
 ```
+
+
+
+------
 
 
 
