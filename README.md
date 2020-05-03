@@ -45,7 +45,7 @@ python3 trascribe_google.py 	# Google Cloud - connection required
 python3 trascribe_sphinx.py  	# Pocket Sphinx - Offline
 ```
 
-
+If audio file is longer than 20 minutes split it using [Aucacity](https://www.audacityteam.org/).
 
 ------
 
