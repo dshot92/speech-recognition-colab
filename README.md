@@ -68,3 +68,8 @@ https://github.com/Uberi/speech_recognition/blob/master/reference/pocketsphinx.r
 
 
 
+Possible implementation of
+
+https://github.com/davidavdav/audacity.py
+
+for splitting the long file directly by script
