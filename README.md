@@ -1,13 +1,21 @@
+
+
 # Speech Recognition
 
-Quick files ready to get an mp3 input of 5 minutes and output it in its transcribed form.
+Automatization of already written tools to transcibe audio files.
 
-Will automaticly convert file into wav and then transcribe it.
+Autoconverts audio files to wav for simpler handling while transcribe.
+
+Utilizes Google Speech-to-text and Wit.AI  APIs.
+
 Google is really amazing in understanding, both english and italian but has a max free cap of 60 minutes/month.
 https://cloud.google.com/speech-to-text
 
-Pocket Sphinx works offline, but requires a prebuild model for each language.
-i've added an italian model and the instruction on how to use it, but the accuracy is that great.
+Wit.AI is free but is not as precise as the google alternative
+
+https://wit.ai/
+
+
 
 Based on 
 
@@ -30,46 +38,25 @@ python3 setup.py install
 sudo pip3 install pydub
 sudo pip3 install pyaudio
 sudo apt install ffmpeg libavcodec-extra-53
-pip3 install pocketsphinx
+pip3 install pytube3
 ```
 
 ### Usage
 
-Copy mp3 files into main folder and change src and dst strings in the script files. 
+Insert yours Wit.AI token if you want to use these APIs into the transcribe.py file
 
-##### Scripts
-
-```
-python3 trascribe_google.py 	# Google Cloud - connection required
-
-python3 trascribe_sphinx.py  	# Pocket Sphinx - Offline
-```
-
-If audio file is longer than 20 minutes split it using [Aucacity](https://www.audacityteam.org/).
-
-------
-
-
-
-### Pocket Sphinx Italian setup:
+Copy audio files into input folder and then run:
 
 ```
-sudo apt install unzip
-sudo unzip ./PocketSphinx_Setup/it-IT.zip
-sudo mv ./pocketsphinx-data /usr/local/lib/python3.8/dist-packages/speech_recognition/pocketsphinx-data
-
+python3 transcribe.py
 ```
 
-For references:
+The script will prompt which file to transcribe and automatically convert them to wav format without deleting the original files.
+
+To download a video from Youtube use the script
 
 ```
-https://github.com/Uberi/speech_recognition/blob/master/reference/pocketsphinx.rst
+python3 youtube_download.py
 ```
 
-
-
-Possible implementation of
-
-https://github.com/davidavdav/audacity.py
-
-for splitting the long file directly by script
+Enter the video url and the audio file of maximum quality allowed will automatically be downloaded into the input folder ready to be transcribed.
