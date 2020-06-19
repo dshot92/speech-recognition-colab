@@ -10,7 +10,7 @@ from wit import Wit
 from pydub import AudioSegment
 
 # wit.ai token api
-access_token = 'Enter Wit.AI token Here'
+# access_token = 'Enter Wit.AI token Here'
 
 client = Wit(access_token)
 
