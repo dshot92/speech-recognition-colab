@@ -31,8 +31,11 @@ https://github.com/Uberi/speech_recognition
 
 ``` git clone https://github.com/dshot92/speechrecognition.git
 cd speechrecognition
+sudo add-apt-repository universe
+sudo apt update
 sudo apt install ffmpeg
-pip install SpeechRecognition
+sudo apt install python3-pip
+pip3 install SpeechRecognition
 pip3 install pydub
 pip3 install pyaudio
 pip3 install wit

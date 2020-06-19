@@ -10,7 +10,8 @@ from wit import Wit
 from pydub import AudioSegment
 
 # wit.ai token api
-# access_token = 'Enter Wit.AI token Here'
+access_token = 'Enter Wit.AI token Here'
+access_token = 'NZ53DR2SUADO2PBLJONJI3H4OZZDB3AD'
 
 client = Wit(access_token)
 
@@ -56,7 +57,7 @@ for j in range(parts):
     audio_segment = audio[t1:t2]
     audio_segment.export('./aux.wav', format="wav")
 
-    print('Part {} of {}'.format(j, parts))
+    print('Part {} of {}'.format(j+1, parts))
     # 0 = Google
     if method == 0:
         try:
@@ -91,6 +92,5 @@ for j in range(parts):
     #delete aux files of 15 seconds
     os.remove("./aux.wav")
 
-# Last step and last aux removal
+# Last step
 print('Done')
-os.remove("./aux.wav")
