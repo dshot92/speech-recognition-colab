@@ -17,7 +17,7 @@ https://wit.ai/
 
 
 
-Based on 
+Based on
 
 ```
 https://github.com/Uberi/speech_recognition
@@ -29,15 +29,13 @@ https://github.com/Uberi/speech_recognition
 
 ### Install
 
-```
-git clone https://github.com/dshot92/speechrecognition.git
+``` git clone https://github.com/dshot92/speechrecognition.git
 cd speechrecognition
-git clone https://github.com/Uberi/speech_recognition.git
-cd speech_recognition
-python3 setup.py install
-sudo pip3 install pydub
-sudo pip3 install pyaudio
-sudo apt install ffmpeg libavcodec-extra-53
+sudo apt install ffmpeg
+pip install SpeechRecognition
+pip3 install pydub
+pip3 install pyaudio
+pip3 install wit
 pip3 install pytube3
 ```
 

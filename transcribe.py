@@ -11,6 +11,7 @@ from pydub import AudioSegment
 
 # wit.ai token api
 access_token = 'Enter Wit.AI token Here'
+
 client = Wit(access_token)
 
 # get list of file in input folder
@@ -46,8 +47,8 @@ print('\nSelect platform for transcribing: \n0 : Google\n1 : Wit.AI')
 
 # select APIs to use
 method = int(input())
-
-for j in range(1 + (len(audio) // offset)):
+parts = 1 + (len(audio) // offset)
+for j in range(parts):
 
     # get intervals of 15 from audio data
     t1 = j * offset
@@ -55,6 +56,7 @@ for j in range(1 + (len(audio) // offset)):
     audio_segment = audio[t1:t2]
     audio_segment.export('./aux.wav', format="wav")
 
+    print('Part {} of {}'.format(j, parts))
     # 0 = Google
     if method == 0:
         try:
@@ -62,12 +64,13 @@ for j in range(1 + (len(audio) // offset)):
                 aux = r.record(source)  # read the entire audio file
 
             # call to google APIs
-            data = r.recognize_google(aux, language="en-US", show_all=False)
+            data = r.recognize_google(aux, language="en-US", show_all=False) # English
+            # data = r.recognize_google(aux, language="it-IT", show_all=False) # Italian
 
-            file_object = open('./output/' + list[i] + '_google.txt', 'a')
+            file_object = open('./output/' + file + '_google.txt', 'a')
             file_object.write(str(data))
             file_object.close()
-            print(str(data))
+            # print(str(data))
 
         except sr.UnknownValueError:
             print("Google Speech Recognition could not understand audio")
@@ -80,10 +83,14 @@ for j in range(1 + (len(audio) // offset)):
             # call to Wit.AI APIs
             resp = client.speech(f, {'Content-Type': 'audio/wav'})
 
-        file_object = open('./output/' + list[i] + '_witAI.txt', 'a')
+        file_object = open('./output/' + file + '_witAI.txt', 'a')
         file_object.write(str(resp['text']))
         file_object.close()
-        print(str(resp['text']))
+        # print(str(resp['text']))
 
     #delete aux files of 15 seconds
     os.remove("./aux.wav")
+
+# Last step and last aux removal
+print('Done')
+os.remove("./aux.wav")
