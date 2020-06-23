@@ -61,3 +61,21 @@ python3 youtube_download.py
 ```
 
 Enter the video url and the audio file of maximum quality allowed will automatically be downloaded into the input folder ready to be transcribed.
+
+------
+
+### Jupyter Install
+
+#### For Python 3
+
+```
+pip3 install --upgrade --force-reinstall --no-cache-dir jupyter
+```
+
+
+
+------
+
+TODO:
+
+- [ ] impement https://stackoverflow.com/questions/36458214/split-speech-audio-file-on-words-in-python
