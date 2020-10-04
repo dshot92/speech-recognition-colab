@@ -1,12 +1,11 @@
 #!/usr/bin/env python3
-import datetime
 import os
 import sys
 import time  # for delay
-from os import listdir
-
-import pydub
+import datetime
 import speech_recognition as sr
+from os import listdir
+import pydub
 from pydub import AudioSegment
 
 # get list of file in input folder
@@ -28,7 +27,6 @@ for i in range(len(list)):
 # get input from userò
 file_name = int(input())
 print(file_name)
-
 file_name = list[file_name]
 
 # get audiofile into usable form
@@ -71,12 +69,14 @@ for j in range(parts):
             aux, language=language, show_all=False)  # English
 
         file_object = open(os.path.join(
-            path_output, file_name) + '_google.txt', 'a')
-        file_object.write('\n[ ' + str(datetime.timedelta(seconds=t1 / 1000)) + 's : ' + str(datetime.timedelta(seconds=t2 / 1000)) + 's ]\n')
+            path_output, file_name) + '_google.srt', 'a')
+        #file_object.write('\n[ ' + str(datetime.timedelta(seconds=t1 / 1000)) + 's : ' + str(datetime.timedelta(seconds=t2 / 1000)) + 's ]\n')
         if str(data)[-1] == ' ':
-            file_object.write(str(data))
+            file_object.write('\n\n' + str(j) + '\n' +
+                              '{} --> {}'.format(start, end) + '\n' + str(data))
         else:
-            file_object.write(str(data) + ' ')
+            file_object.write(
+                '\n\n' + str(j) + '\n' + '{} --> {}'.format(start, end) + '\n' + str(data) + ' ')
         file_object.close()
 
     except sr.UnknownValueError:
