@@ -10,6 +10,10 @@ from pydub import AudioSegment
 
 # get list of file in input folder
 path_input = os.getcwd() + os.sep + 'input'
+
+if not os.path.exists('output'):
+    os.makedirs('output')
+
 path_output = os.getcwd() + os.sep + 'output'
 
 # pydub.AudioSegment.ffmpeg = "C:/ffmpeg"

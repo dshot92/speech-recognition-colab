@@ -11,6 +11,10 @@ from pydub import AudioSegment
 
 # get list of file in input folder
 path_input = os.getcwd() + os.sep + 'input'
+
+if not os.path.exists('output'):
+    os.makedirs('output')
+
 path_output = os.getcwd() + os.sep + 'output'
 
 # pydub.AudioSegment.ffmpeg = "C:/ffmpeg"
@@ -72,7 +76,8 @@ for j in range(parts):
 
         file_object = open(os.path.join(
             path_output, file_name) + '_google.txt', 'a')
-        file_object.write('\n[ ' + str(datetime.timedelta(seconds=t1 / 1000)) + 's : ' + str(datetime.timedelta(seconds=t2 / 1000)) + 's ]\n')
+        file_object.write('\n[ ' + str(datetime.timedelta(seconds=t1 / 1000)) +
+                          's : ' + str(datetime.timedelta(seconds=t2 / 1000)) + 's ]\n')
         if str(data)[-1] == ' ':
             file_object.write(str(data))
         else:
