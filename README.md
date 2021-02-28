@@ -1,6 +1,6 @@
-# Speech Recognition
+# Speech Recognition Colab
 
-[![Open In Colab](README.assets/colab-badge.svg)](https://colab.research.google.com/github/dshot92/speech-recognition-colab/blob/master/Speech_Recognition.ipynb)
+[![Open In Colab](README.assets/colab-badge.svg)](https://colab.research.google.com/github/dshot92/speech-recognition-colab/blob/master/Speech_Recognition_Colab.ipynb)
 
 Automatization of already written tools to transcribe audio files.
 
