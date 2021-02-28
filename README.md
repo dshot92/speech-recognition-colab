@@ -1,12 +1,19 @@
 # Speech Recognition
 
-Automatization of already written tools to transcibe audio files.
+```
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/dshot92/speech-recognition-colab/blob/master/Speech_Recognition.ipynb)
 
-Autoconverts audio files to wav for simpler handling while transcribe.
+```
+
+
+
+Automatization of already written tools to transcribe audio files.
+
+Auto converts audio files to wav for simpler handling while transcribe.
 
 Utilizes Google Speech-to-text.
 
-Google is really amazing in understanding, both english and italian.
+Google is really amazing in understanding, both English and Italian.
 https://cloud.google.com/speech-to-text
 
 Based on
